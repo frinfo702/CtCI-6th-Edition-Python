@@ -2,7 +2,8 @@ import time
 import unittest
 from collections import defaultdict
 
-def is_unique_chars_pythonic(s: str) -> bool:
+# TC: O(n), n: length of s SC: O(1)
+def is_unique_chars_algorithmic(s: str) -> bool:
     # assuming character set is ASCII(max 128 kind)
     if len(s) > 128:
         return False
@@ -15,6 +16,14 @@ def is_unique_chars_pythonic(s: str) -> bool:
         ascii_char[val] = True
     
     return True
+
+# TC: O(n) SC: O(n) n: length of s
+def is_unique_chars_pythonic(s: str) -> bool:
+    return len(set(s)) == len(s)
+
+
+def is_unique_bit_vector(s: str) -> bool:
+    
 
 
 class Test(unittest.TestCase):
@@ -29,8 +38,8 @@ class Test(unittest.TestCase):
     ]
     test_functions = [
         is_unique_chars_pythonic,
-        # is_unique_chars_algorithmic,
-        # is_unique_bit_vector,
+        is_unique_chars_algorithmic,
+        is_unique_bit_vector,
         # is_unique_chars_using_dictionary,
         # is_unique_chars_using_set,
         # is_unique_chars_sorting,
