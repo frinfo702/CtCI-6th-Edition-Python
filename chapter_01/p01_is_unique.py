@@ -2,6 +2,8 @@ import time
 import unittest
 from collections import defaultdict
 
+# git push test
+
 # TC: O(n), n: length of s SC: O(1)
 def is_unique_chars_algorithmic(s: str) -> bool:
     # assuming character set is ASCII(max 128 kind)
