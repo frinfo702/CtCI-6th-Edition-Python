@@ -23,7 +23,18 @@ def is_unique_chars_pythonic(s: str) -> bool:
 
 
 def is_unique_bit_vector(s: str) -> bool:
-    
+    """Uses bitwise operation instead of extra data structures."""
+    # Assuming character set is ASCII (128 characters)
+    if len(s) > 128:
+        return False
+
+    checker = 0
+    for c in s:
+        val = ord(c)
+        if (checker & (1 << val)) > 0:
+            return False
+        checker |= 1 << val
+    return True
 
 
 class Test(unittest.TestCase):
